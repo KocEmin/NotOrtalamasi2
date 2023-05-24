@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+public class NotOrtalamasi2 {
+    public static void main(String[] args) {
+        int mat, fizik, kimya, turkce, bio;
+
+        Scanner inp = new Scanner(System.in);
+
+        System.out.println("Not Ortalamanızın Hesaplanması için İstenilen Bilgileri Giriniz");
+
+        System.out.print("Matemetik Vize Notunuz :");
+        mat = inp.nextInt();
+
+
+        System.out.print("Türkçe Vize Notunuz :");
+        turkce = inp.nextInt();
+
+
+        System.out.print("Fizik Vize Notunuz :");
+        fizik = inp.nextInt();
+
+
+        System.out.print("Kimya Vize Notunuz :");
+        kimya = inp.nextInt();
+
+
+        System.out.print("Biyoloji Vize Notunuz :");
+        bio = inp.nextInt();
+
+        int toplamPuan = 0, gecerliderssayisi = 0;
+
+        if (mat >= 0 && mat <= 100) {
+            toplamPuan += mat;
+            gecerliderssayisi++;
+        } else
+            System.out.println("Matematik notunu '0' ve '100' arasında bir sayı giriniz.");
+
+        if (turkce >= 0 && turkce <= 100) {
+            toplamPuan += turkce;
+            gecerliderssayisi++;
+        } else
+            System.out.println("Türkçe notunu '0' ve '100' arasında bir sayı giriniz.");
+
+        if (fizik >= 0 && fizik <= 100) {
+            toplamPuan += fizik;
+            gecerliderssayisi++;
+        } else
+            System.out.println("Fizik notunu '0' ve '100' arasında bir sayı giriniz.");
+
+        if (kimya >= 0 && kimya <= 100) {
+            toplamPuan += kimya;
+            gecerliderssayisi++;
+        } else
+            System.out.println("Kimya notunu '0' ve '100' arasında bir sayı giriniz.");
+
+        if (bio >= 0 && bio <= 100) {
+            toplamPuan += bio;
+            gecerliderssayisi++;
+        } else
+            System.out.println("Biyoloji notunu '0' ve '100' arasında bir sayı giriniz.");
+
+        if ( gecerliderssayisi == 0) {
+            System.out.print("Ortalama Hesaplanamıyor");
+
+        } else {
+            double ortalama = toplamPuan / gecerliderssayisi;
+
+            System.out.println("Not Ortalamanız :" + ortalama);
+            if (ortalama < 55) {
+                System.out.print("Sınıf tekrarı yapacaksınız.");
+            } else {
+                System.out.print("Sınıfı başarı ile geçtiniz");
+            }
+            System.out.printf("Başarı Durumu : " + ortalama);
+        }
+
+    }
+}
